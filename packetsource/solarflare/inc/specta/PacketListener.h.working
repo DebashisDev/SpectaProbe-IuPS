@@ -1,0 +1,25 @@
+#ifndef SRC_PACKETLISTENER_H_
+#define SRC_PACKETLISTENER_H_
+
+#include <string>
+
+#include "SpectaTypedef.h"
+#include "MSGStore.h"
+#include "GTPGlobal.h"
+#include "TCPUDPGlobal.h"
+
+using namespace std;
+
+class PacketListener {
+
+	public:
+		PacketListener(int noofrouters, int intfid);
+		~PacketListener();
+		void start();
+
+	private:
+		int interfaceId;
+		string interfaceName;
+};
+
+#endif /* SRC_PACKETLISTENER_H_ */

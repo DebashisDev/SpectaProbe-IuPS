@@ -1,0 +1,65 @@
+#ifndef SRC_PACKETLISTENER_H_
+#define SRC_PACKETLISTENER_H_
+
+#include <string>
+
+#include "SolarGlobal.h"
+#include "Log.h"
+#include "SpectaTypedef.h"
+#include "MSGStore.h"
+#include "InterfaceMonitor.h"
+
+using namespace std;
+
+class PacketListener : public BaseConfig {
+
+	public:
+		PacketListener(int perListenerRouters, int intfId);
+		~PacketListener();
+		VOID start();
+
+	private:
+
+		int ROUTER_TO_PROCESS;
+		int END_ROUTER_ID;
+		string InterfaceName;
+		int InterfaceId;
+
+		int cfg_hexdump;
+		int cfg_timestamping;
+		int cfg_verbose;
+
+		VOID hexdump(const void* pv, int len);
+
+		VOID consume_packet(interfaceThread* t, ef_packed_stream_packet* ps_pkt);
+		VOID handle_rx_ps(interfaceThread* t, const ef_event* pev);
+		VOID receivePackets(interfaceThread* t);
+
+		VOID storepkt_i_0(int rid, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_1(int rid, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_2(int rid, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_3(int rid, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+
+		VOID storepkt_i_0_r_0(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_0_r_1(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_0_r_2(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_0_r_3(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+
+		VOID storepkt_i_1_r_0(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_1_r_1(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_1_r_2(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_1_r_3(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+
+		VOID storepkt_i_2_r_0(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_2_r_1(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_2_r_2(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_2_r_3(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+
+		VOID storepkt_i_3_r_0(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_3_r_1(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_3_r_2(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+		VOID storepkt_i_3_r_3(int t_index, BYTE pkt, uint16_t len, long tv_sec, uint32_t tv_nsec);
+
+};
+
+#endif /* SRC_PACKETLISTENER_H_ */
