@@ -1,0 +1,36 @@
+/usr/local/ossasn1/linux-glibc2.3-amd64.trial/6.3.0/bin/asn1cpp directives.asn ranap.asn -noRelaxedMode -ber -per -uper -exer -xer -autoencdec -prefix rnp
+
+/usr/local/ossasn1/linux-glibc2.3-amd64.trial/6.3.0/bin/asn1cpp directives_s1ap.asn s1ap.asn1 -noRelaxedMode -ber -per -uper -exer -xer -autoencdec -prefix mme
+
+cp s1ap.cpp /home/engine/workspace/SpectaProbe/plugins/s1mme/src/;cp s1ap.h /home/engine/workspace/SpectaProbe/plugins/s1mme/inc/;cp ranap.cpp /home/engine/workspace/SpectaProbe/plugins/iups/src/;cp ranap.h /home/engine/workspace/SpectaProbe/plugins/iups/inc/
+
+rm plugins/iups/src/*.o;rm plugins/s1mme/src/*.o
+
+locate osstype.h
+
+
+/usr/local/ossasn1/linux-glibc2.3-amd64.trial/10.3.0/include/
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------- OLD -------------------------------
+
+
+sudo ./asn1 /home/deb/workspace/SpectaProbe-Unified/asn/ranap.asn -root -noRelaxedMode -ber -per -exer
+
+sudo /usr/local/ossasn1/linux-glibc2.3-amd64.trial/10.3.0/bin/asn1 /home/deb/workspace/SpectaProbe-Unified/asn/ranap.asn -root -noRelaxedMode -ber -per -exer -xer -c++ 
+
+
+
+/usr/local/ossasn1/linux-glibc2.3-amd64.trial/10.3.0/bin/asn1 directives.asn ranap.asn -noRelaxedMode -ber -per -uper -exer -xer -c++ -autoencdec -prefix rnp
+
+/usr/local/ossasn1/linux-glibc2.3-amd64.trial/10.3.0/bin/asn1 directives_s1ap.asn s1ap.asn1 -noRelaxedMode -ber -per -uper -exer -xer -c++ -autoencdec -prefix mme
